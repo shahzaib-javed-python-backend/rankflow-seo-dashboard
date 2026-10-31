@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RankFlow — Real-Time SEO Rank Tracker & Local Maps Engine</title>
+    <meta name="description" content="Real-time SEO rank tracking, 36-cell local maps geo-grid monitoring, AI rank drop diagnoser, and white-label reporting." />
+    <meta property="og:title" content="RankFlow — Real-Time SEO Rank Tracker & Local Maps Engine" />
+    <meta property="og:description" content="Real-time SEO rank tracking, 36-cell local maps geo-grid monitoring, AI rank drop diagnoser, and white-label reporting." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RankFlow — Real-Time SEO Rank Tracker & Local Maps Engine" />
+    <meta name="twitter:description" content="Real-time SEO rank tracking, 36-cell local maps geo-grid monitoring, AI rank drop diagnoser, and white-label reporting." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" />
+    <style id="rf-fallback">
+      @keyframes rf-spin { to { transform: rotate(360deg); } }
+      @keyframes rf-pulse { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+      @keyframes rf-fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes rf-ring { 0% { transform: scale(.8); opacity: .7; } 100% { transform: scale(1.8); opacity: 0; } }
+      .rf-fallback { min-height: 100vh; background: #0a0f1a; color: #e2e8f0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
+      .rf-fallback * { box-sizing: border-box; }
+      .rf-brand { position: relative; width: 72px; height: 72px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; }
+      .rf-brand .rf-ring-outer { position: absolute; inset: 0; border-radius: 16px; border: 2px solid rgba(20,184,143,.35); animation: rf-ring 1.8s ease-out infinite; }
+      .rf-brand .rf-ring-inner { width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #14b88f, #0d9668); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(20,184,143,.3); }
+      .rf-brand .rf-ring-inner svg { width: 26px; height: 26px; color: #04130d; }
+      .rf-spinner { width: 28px; height: 28px; border: 3px solid rgba(20,184,143,.15); border-top-color: #14b88f; border-radius: 50%; animation: rf-spin .8s linear infinite; margin-top: 1.25rem; }
+      .rf-fallback h1 { font-size: 1.75rem; font-weight: 700; letter-spacing: -.02em; margin: 0 0 .5rem; background: linear-gradient(135deg, #e2e8f0, #14b88f); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: rf-fade .6s ease-out both; }
+      .rf-fallback .rf-tag { font-size: .95rem; color: #94a3b8; max-width: 540px; line-height: 1.6; margin: 0 0 1.75rem; animation: rf-fade .6s ease-out .1s both; }
+      .rf-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; max-width: 720px; width: 100%; margin: 0 0 2rem; }
+      .rf-features section { background: rgba(15,23,42,.6); border: 1px solid rgba(148,163,184,.08); border-radius: 12px; padding: 1.1rem 1.25rem; text-align: left; animation: rf-fade .6s ease-out both; }
+      .rf-features section:nth-child(1) { animation-delay: .15s; }
+      .rf-features section:nth-child(2) { animation-delay: .25s; }
+      .rf-features section:nth-child(3) { animation-delay: .35s; }
+      .rf-features section:nth-child(4) { animation-delay: .45s; }
+      .rf-features h2 { font-size: 1rem; font-weight: 600; color: #e2e8f0; margin: 0 0 .35rem; }
+      .rf-features p { font-size: .82rem; color: #94a3b8; line-height: 1.55; margin: 0; }
+      .rf-fallback nav { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; margin: 0 0 1.5rem; animation: rf-fade .6s ease-out .5s both; }
+      .rf-fallback nav a { font-size: .8rem; color: #14b88f; text-decoration: none; padding: .4rem .8rem; border-radius: 8px; border: 1px solid rgba(20,184,143,.18); transition: background .2s; }
+      .rf-fallback nav a:hover { background: rgba(20,184,143,.1); }
+      .rf-fallback footer { font-size: .75rem; color: #64748b; animation: rf-fade .6s ease-out .55s both; }
+      .rf-loading-label { font-size: .78rem; color: #64748b; margin-top: .5rem; animation: rf-pulse 1.6s ease-in-out infinite; }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="rf-fallback" aria-busy="true" aria-label="Loading RankFlow">
+        <div class="rf-brand">
+          <span class="rf-ring-outer"></span>
+          <span class="rf-ring-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-8"/><path d="M21 8v5h-5"/></svg>
+          </span>
+        </div>
+        <h1>RankFlow — Real-Time SEO Rank Tracker</h1>
+        <p class="rf-tag">Real-time SEO rank tracking, 36-cell local maps geo-grid monitoring, AI rank drop diagnoser, and white-label reporting.</p>
+        <div class="rf-features">
+          <section>
+            <h2>Keyword Rank Tracking</h2>
+            <p>Track daily and weekly keyword positions across desktop and mobile SERPs with volatility detection and trend visualization.</p>
+          </section>
+          <section>
+            <h2>Local Maps Geo-Grid</h2>
+            <p>Monitor your Google Business Profile visibility with an interactive 36-cell geo-grid heatmap and per-cell 3-Pack drill-down for any location.</p>
+          </section>
+          <section>
+            <h2>AI Rank Drop Diagnoser</h2>
+            <p>Automatically diagnose sudden rank drops by cross-referencing SERP volatility, competitor content shifts, and on-page content gaps.</p>
+          </section>
+          <section>
+            <h2>White-Label Reports</h2>
+            <p>Generate branded SEO performance reports with keyword, local maps, and Core Web Vitals data ready to share with clients.</p>
+          </section>
+        </div>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/#keywords">Keywords</a>
+          <a href="/#local-maps">Local Maps</a>
+          <a href="/#reports">Reports</a>
+        </nav>
+        <div class="rf-spinner" role="status" aria-hidden="true"></div>
+        <p class="rf-loading-label">Loading dashboard…</p>
+        <footer><p>&copy; 2026 RankFlow. Real-time SEO rank tracking and local maps intelligence platform.</p></footer>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
